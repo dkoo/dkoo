@@ -1,0 +1,7 @@
+.wp-block-separator {
+	background: var(--white);
+	border: none;
+	height: 0.1875rem;
+	margin: 1rem auto;
+	width: 4rem;
+}

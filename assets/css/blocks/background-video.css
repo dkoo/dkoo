@@ -1,0 +1,36 @@
+.video-background {
+	margin-bottom: 4rem;
+	margin-top: 4rem;
+
+	@media (--medium) {
+		&::before {
+			height: 102%;
+		}
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	& .video-foreground {
+
+		@media (--medium) {
+			height: 102%;
+		}
+	}
+
+	& .next {
+
+		&:hover {
+
+			&::before,
+			&::after {
+				background-color: var(--brand);
+			}
+		}
+	}
+}

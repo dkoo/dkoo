@@ -1,0 +1,68 @@
+.contact-links {
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	margin: 2rem 0 0 0;
+	padding: 0;
+	width: 100%;
+
+	& a {
+		border: none;
+		display: block;
+		height: 2rem;
+		overflow-x: hidden;
+		overflow-y: visible;
+		position: relative;
+		text-indent: 100%;
+		transition: transform 0.2s ease-in-out;
+		width: 2rem;
+
+		&::after {
+			background-position: center;
+			background-size: contain;
+			content: '';
+			display: block;
+			left: 0;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+
+		&:focus,
+		&:hover {
+			border: none;
+			transform: translateY(-0.25rem);
+		}
+
+		&[href*="github"] {
+			&::after {
+				background-image: url('../assets/images/github.svg');
+			}
+		}
+
+		&[href*="instagram"] {
+			&::after {
+				background-image: url('../assets/images/instagram.svg');
+			}
+		}
+
+		&[href*="twitter"] {
+			&::after {
+				background-image: url('../assets/images/twitter.svg');
+			}
+		}
+
+		&[href*="linkedin"] {
+			&::after {
+				background-image: url('../assets/images/linkedin.svg');
+			}
+		}
+
+		&[href*="mailto"] {
+			&::after {
+				background-image: url('../assets/images/email.svg');
+			}
+		}
+	}
+}

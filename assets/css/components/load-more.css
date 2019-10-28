@@ -1,0 +1,18 @@
+.load-more {
+	appearance: none;
+	background-color: var(--brand);
+	border: none;
+	border-radius: 0.25rem;
+	color: var(--white);
+	cursor: pointer;
+	display: block;
+	font-size: 1rem;
+	margin: auto;
+	padding: 0.5em 1em;
+	transition: background-color 0.2s ease-in-out;
+
+	&:focus,
+	&:hover {
+		background-color: var(--brand-alt);
+	}
+}

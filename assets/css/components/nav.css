@@ -1,0 +1,68 @@
+.primary-nav {
+	left: 0;
+	padding: 0.5rem 2rem;
+	position: fixed;
+	top: 0;
+	transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+	width: 100%;
+	z-index: 2;
+
+	@nest .scrolled & {
+		background-color: rgba(255,255,255,0.95);
+		box-shadow: 0 0.0625rem 0.125rem rgba(0,0,0,0.25);
+	}
+
+	@nest .admin-bar & {
+		top: 46px;
+
+		@media (--wp-medium) {
+			top: 32px;
+		}
+	}
+
+	& .container {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	& a {
+		border: none;
+		color: var(--text-color);
+		font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+		font-size: 0.875rem;
+		font-weight: 500;
+		text-decoration: none;
+		transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+
+		&:focus,
+		&:hover {
+			color: var(--brand);
+			text-shadow: 0 0 0.125rem rgba(255,255,255,0.25);
+		}
+	}
+
+	& ul {
+		display: flex;
+		justify-content: space-between;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& li + li {
+			margin-left: 2rem;
+		}
+	}
+
+	& .site-logo {
+		font-size: 1rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+
+		& span {
+			color: var(--brand);
+		}
+	}
+}

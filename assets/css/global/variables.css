@@ -1,0 +1,25 @@
+:root {
+	/*-- COLORS --*/
+
+	--black: #000000;
+	--grey: #888888;
+	--grey-light: #dddddd;
+	--white: #ffffff;
+	--blue: #3372df;
+	--blue-light: #2980b9;
+	--red: #c0392b;
+	--brand: #fa7921;
+	--brand-alt: #fe9920;
+	--brand-secondary: #444554;
+	--brand-secondary-alt: #0c4767;
+
+
+	--border-color: var(--grey);
+	--link-color: var(--blue);
+	--link-highlight-color: var(--blue-light);
+	--menu-highlight-color: var(--red);
+	--text-color: var(--black);
+
+	/*-- VARIABLES --*/
+	--max-width: 50rem;
+}

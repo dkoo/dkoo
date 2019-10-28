@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700,900|Open+Sans:400,400i,700,700i&display=swap');
+
+html {
+	box-sizing: border-box;
+	color: var(--text-color);
+	font-size: 16px;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	line-height: 1.4;
+	overflow-x: hidden;
+
+	&.fonts-loaded {
+		font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	}
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	}
+
+	@supports (-ms-accelerator:true) {
+		font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-weight: 500;
+	margin: 0;
+	width: 100%;
+
+	@nest .fonts-loaded & {
+		font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	}
+
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	}
+
+	@supports (-ms-accelerator:true) {
+		font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+	}
+
+	& + p,
+	& + .wp-block-columns {
+		margin-top: 2rem;
+	}
+}
+
+h1 {
+	letter-spacing: 0.05em;
+	font-size: 2.25rem;
+	text-transform: uppercase;
+
+	@media (--medium) {
+		font-size: 2.5rem;
+	}
+}
+
+h2 {
+	letter-spacing: 0.05em;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+
+	@media (--medium) {
+		font-size: 1.75rem;
+	}
+}
+
+h4,
+h5 {
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+p {
+	margin-top: 0;
+
+	& + p {
+		margin-top: 1rem;
+	}
+}
+
+a {
+	border-bottom: 1px solid var(--grey-light);
+	color: var(--link-color);
+	text-decoration: none;
+	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+	&:hover {
+		border-color: var(--link-highlight-color);
+		color: var(--link-highlight-color);
+	}
+}
+
+em {
+	background-clip: text;
+	background-color: #222;
+	background-position: top left;
+	background-repeat: no-repeat;
+	background-size: 50% 100%;
+	color: transparent;
+
+	&:hover,
+	&:focus {
+		animation-iteration-count: infinite;
+		animation-duration: 2s;
+		animation-name: shimmer;
+		background-image: -webkit-gradient( linear, left top, right top, from( #222 ), to( #222 ), color-stop( 0.5, #fff ) );
+		background-image: -moz-gradient(linear, left top, right top, from( #222 ), to( #222 ), color-stop( 0.5, #fff ) );
+		background-image: gradient(linear, left top, right top, from( #222 ), to( #222 ), color-stop( 0.5, #fff ) );
+	}
+
+	@nest a & {
+		color: var(--link-color);
+	}
+}
+
+@keyframes shimmer {
+	0% {
+			background-position: -100% 0;
+	}
+	50% {
+			background-position: 200% 0;
+	}
+	100% {
+			background-position: 200% 0;
+	}
+}

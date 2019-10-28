@@ -1,0 +1,21 @@
+@import url("./global");
+@import url("./components");
+@import url("./blocks");
+@import url("./templates");
+
+/**
+ * Base HTML
+ */
+body {
+	background-color: var(--white);
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0 2rem;
+	position: relative;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
