@@ -12,6 +12,10 @@ html {
 		font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 	}
 
+	&.modal-open {
+		overflow: hidden;
+	}
+
 	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 		font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 	}
@@ -44,7 +48,9 @@ h5 {
 	}
 
 	& + p,
-	& + .wp-block-columns {
+	& + .wp-block-columns,
+	& + .wp-block-image,
+	& + .wp-block-media-text {
 		margin-top: 2rem;
 	}
 }
@@ -89,9 +95,20 @@ a {
 	text-decoration: none;
 	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
+	&:focus,
 	&:hover {
 		border-color: var(--link-highlight-color);
 		color: var(--link-highlight-color);
+	}
+
+	@nest .has-background & {
+		color: var(--grey-light);
+
+		&:focus,
+		&:hover {
+			border-color: var(--white);
+			color: var(--white);
+		}
 	}
 }
 

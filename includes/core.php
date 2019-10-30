@@ -59,6 +59,10 @@ function scripts() {
 		true
 	);
 
+	wp_localize_script( 'main', 'baseUrl', [
+		'url' => esc_url( get_rest_url() . 'wp/v2/' )
+	] );
+
 	if ( is_home() || is_archive() ) {
 		wp_enqueue_script(
 			'load-more',

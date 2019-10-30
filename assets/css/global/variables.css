@@ -2,6 +2,7 @@
 	/*-- COLORS --*/
 
 	--black: #000000;
+	--black-translucent: rgba(0,0,0,0.75);
 	--grey: #888888;
 	--grey-light: #dddddd;
 	--white: #ffffff;
@@ -12,7 +13,6 @@
 	--brand-alt: #fe9920;
 	--brand-secondary: #444554;
 	--brand-secondary-alt: #0c4767;
-
 
 	--border-color: var(--grey);
 	--link-color: var(--blue);

@@ -109,7 +109,7 @@ class LoadMore {
 		const params = this.settings.queryArgs;
 		const xhr = new XMLHttpRequest();
 
-		let url = this.settings.baseUrl;
+		let url = this.settings.baseUrl + 'posts/';
 
 		if ( !url ) {
 			return console.error( 'dkoo Load More: Must pass a base URL for the WordPress REST API.' );
@@ -276,6 +276,6 @@ class LoadMore {
 
 if ( document.querySelector( '.load-more' ) ) {
 	new LoadMore( '.articles-list', {
-		baseUrl: '/wp-json/wp/v2/posts'
+		baseUrl: window.baseUrl.url
 	} );
 }

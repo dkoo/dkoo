@@ -3,7 +3,7 @@
  * Main nav menu.
  */
 
-if ( has_nav_menu( 'primary' ) ) : ?>
+if ( has_nav_menu( 'primary' ) && ! is_404() ) : ?>
 <nav class="primary-nav">
 	<div class="container">
 		<?php

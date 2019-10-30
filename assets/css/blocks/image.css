@@ -1,0 +1,42 @@
+.wp-block-image {
+
+	& .alignleft {
+		float: none;
+		margin-right: 0;
+
+		@media (--medium) {
+			float: left;
+			margin-right: 2rem;
+			max-width: calc(50% - 1rem);
+		}
+	}
+
+	& .alignright {
+		float: none;
+		margin-left: 0;
+
+		@media (--medium) {
+			float: right;
+			margin-left: 2rem;
+			max-width: calc(50% - 1rem);
+		}
+	}
+
+	& .aligncenter {
+		clear: both;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	& .wp-caption {
+		max-width: 100%;
+	}
+
+	& .wp-caption-text,
+	& figcaption {
+		font-size: 0.875rem;
+		font-style: italic;
+		margin: 0;
+	}
+}

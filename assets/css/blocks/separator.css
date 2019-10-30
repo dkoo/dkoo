@@ -1,7 +1,12 @@
 .wp-block-separator {
-	background: var(--white);
+	background-color: var(--black);
 	border: none;
 	height: 0.1875rem;
-	margin: 1rem auto;
+	margin: 4rem auto;
 	width: 4rem;
+
+	@nest .has-background & {
+		background-color: var(--white);
+		margin: 1rem auto;
+	}
 }

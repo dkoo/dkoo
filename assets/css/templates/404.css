@@ -1,0 +1,26 @@
+.error404 {
+
+	& .wrapper {
+		margin: auto;
+		max-width: 37.5rem;
+	}
+
+	& .not-found {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&.admin-bar {
+		& .not-found {
+			height: calc( 100vh - 46px );
+
+			@media (--wp-medium) {
+				height: calc( 100vh - 32px );
+			}
+		}
+	}
+}

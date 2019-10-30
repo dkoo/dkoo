@@ -1,0 +1,80 @@
+.expandable {
+
+	& img,
+	& figure {
+		cursor: pointer;
+	}
+}
+
+.modal {
+	align-items: center;
+	background-color: var(--black-translucent);
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	opacity: 0;
+	padding: 1rem 2rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+
+	&.active {
+		opacity: 1;
+		transition: opacity 0.5s ease-in-out;
+		z-index: 3;
+	}
+
+	@nest .admin-bar & {
+		height: calc(100% - 46px);
+		top: 46px;
+
+		@media (--medium) {
+			height: calc(100% - 32px);
+			top: 32px;
+		}
+	}
+
+	& .close {
+		background-color: transparent;
+		border: none;
+		color: var(--white);
+		cursor: pointer;
+		display: block;
+		font-size: 2rem;
+		padding: 0;
+		position: absolute;
+		right: 1rem;
+		text-align: right;
+		top: 0;
+
+		&::after {
+			content: '×';
+		}
+	}
+
+	& figure {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		justify-content: center;
+		width: 100%;
+	}
+
+	& img {
+		box-shadow: 1rem 1rem 2rem rgba(0,0,0,0.25);
+		display: block;
+		height: auto;
+		max-height: calc(100% - 4rem);
+		max-width: 100%;
+		object-fit: contain;
+		width: auto;
+	}
+
+	& figcaption {
+		color: var(--white);
+		text-align: center;
+	}
+}
