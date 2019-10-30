@@ -69,6 +69,7 @@ const createModal = ( src, id, figcaption ) => {
 	modal.setAttribute( 'id', `modal-${ id }` );
 
 	img.setAttribute( 'src', src );
+	img.classList.add( 'modal-image' );
 
 	closeBtn.className = 'close';
 	span.className = 'screen-reader-text';
@@ -87,8 +88,7 @@ const createModal = ( src, id, figcaption ) => {
 
 	if ( caption ) {
 		figure.appendChild( caption );
-	} else {
-		img.style.height = '100%';
+		img.classList.add( 'with-caption' );
 	}
 
 	modal.appendChild( figure );
@@ -107,9 +107,10 @@ const createModal = ( src, id, figcaption ) => {
  * @param {event} e Click event.
  */
 const handleClick = ( e ) => {
+	const tag = e.target.tagName.toLowerCase();
 	const img = e.currentTarget.querySelector( 'img' );
 
-	if ( ! img ) {
+	if ( ! img || ( tag !== 'img' && tag !== 'figure' ) ) {
 		return;
 	}
 
@@ -134,5 +135,11 @@ export default () => {
 
 	images.forEach( ( image ) => {
 		image.addEventListener( 'click', handleClick );
+	} );
+
+	window.addEventListener( 'resize', () => {
+		const resizeImages = Array.from( document.querySelectorAll( '.modal-image' ) );
+
+		resizeImages.forEach( resizeImage => resizeImage.style.height = 'auto' );
 	} );
 };

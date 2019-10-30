@@ -14,7 +14,6 @@
 	justify-content: center;
 	left: 0;
 	opacity: 0;
-	padding: 1rem 2rem;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -61,20 +60,29 @@
 		height: 100%;
 		justify-content: center;
 		width: 100%;
+
+		@media (--medium) {
+			padding: 1rem;
+		}
 	}
 
 	& img {
-		box-shadow: 1rem 1rem 2rem rgba(0,0,0,0.25);
+		box-shadow: 0.5rem 0.5rem 1rem rgba(0,0,0,0.25);
 		display: block;
 		height: auto;
-		max-height: calc(100% - 4rem);
+		max-height: 100%;
 		max-width: 100%;
 		object-fit: contain;
 		width: auto;
+
+		&.with-caption {
+			max-height: calc(100% - 4rem)
+		}
 	}
 
 	& figcaption {
 		color: var(--white);
+		padding-top: 1rem;
 		text-align: center;
 	}
 }
